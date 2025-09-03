@@ -145,176 +145,208 @@ body.dark .footer-controls select {
   border: 1px solid #555;
 }
 
-/* ---------- Hero sekcija ---------- */
+/* ---------- HERO SEKCIJA ---------- */
 .hero {
-  padding-top: 3rem;
-  min-height: 100vh;
+  padding: 4rem 2rem;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f5f5f5, #e0e0ff);
-  transition: background 0.4s ease;
+  background: linear-gradient(135deg, #ffffff, #f0e0ff); /* svijetli način */
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 body.dark .hero {
-  background: linear-gradient(135deg, #1e1e2f, #2a2a45);
+  background: linear-gradient(135deg, #2a2a45, #1e1e2f); /* tamni način */
 }
 
-/* ---------- Hero container ---------- */
+/* Hero container */
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
   max-width: 1100px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, #ffffff, #f0eaff);
-  padding: 3rem;
+  width: 100%;
+  padding: 2rem;
   border-radius: 25px;
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlideIn 1s forwards;
+  flex-wrap: wrap;
   transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 body.dark .hero-container {
-  background: linear-gradient(135deg, #2a2a45, #1e1e2f);
+  background: rgba(42, 42, 69, 0.8);
   box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
 }
 
-/* ---------- Hero animacije ---------- */
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Hero slika */
 .hero-image {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   border-radius: 20px;
-  border: 4px solid #d8d8ff;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  transform: scale(0.8);
-  animation: imageZoom 1s forwards 0.5s;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #6c63ff; /* usklađeno s ostalim sekcijama */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes imageZoom {
-  to {
-    transform: scale(1);
-  }
+body.dark .hero-image {
+  border-color: #66ffff;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
 }
 
+/* Hero tekst */
 .hero-text {
   max-width: 600px;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: textSlideIn 1s forwards 0.7s;
-}
-
-@keyframes textSlideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  text-align: center;
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: #6c63ff;
   transition: color 0.3s ease;
 }
 
 body.dark .hero-text h1 {
-  color: #ffffff;
-}
-
-.hero-text h2 {
-  font-size: 1.7rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #5555ff;
-  transition: color 0.3s ease;
-}
-
-body.dark .hero-text h2 {
   color: #66ffff;
 }
 
+.hero-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+body.dark .hero-text h2 {
+  color: #ccccff;
+}
+
 .hero-text h3 {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: 400;
-  color: #777;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #555;
 }
 
 body.dark .hero-text h3 {
   color: #ccccff;
 }
 
-/* ---------- Hero buttons ---------- */
+/* Hero gumbi */
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  background-color: #6c63ff;
-  color: white;
-  text-decoration: none;
+.hero-buttons .btn {
+  padding: 0.7rem 1.5rem;
   border-radius: 9999px;
+  background-color: #6c63ff;
+  color: #fff;
   font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+.hero-buttons .btn:hover {
   transform: scale(1.05);
   background-color: #5548c8;
-  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
 }
 
-body.dark .btn {
+body.dark .hero-buttons .btn {
   background-color: #4b44cc;
 }
 
-body.dark .btn:hover {
+body.dark .hero-buttons .btn:hover {
   background-color: #3a38a0;
 }
 
-/* ---------- Social icons ---------- */
+/* Social ikone */
 .socials {
-  margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: 500;
+  color: #555;
+}
+
+body.dark .socials {
+  color: #ccccff;
 }
 
 .socials a {
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #6c63ff;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .socials a:hover {
-  color: #00ffff;
-}
-
-body.dark .socials a {
-  color: #66ffff;
+  color: #00dfff;
 }
 
 body.dark .socials a:hover {
-  color: #ff99ff;
+  color: #66ffff;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 200px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1rem;
+  }
+
+  .hero-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* ---------- ABOUT ME ---------- */
